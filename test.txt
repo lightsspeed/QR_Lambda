@@ -1,0 +1,9 @@
+curl -X POST your_api_gateway_URL \
+  -H "Content-Type: application/json" \
+  -d '{
+    "data": "https://example.com",
+    "fill_color": "#000000",
+    "back_color": "#FFFFFF",
+    "box_size": 10,
+    "error_correction": "M"
+  }'
