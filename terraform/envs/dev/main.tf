@@ -89,7 +89,7 @@ module "amplify" {
       preBuild:
         commands:
           - cd apps/src
-         - npm install  # Changed from npm ci to prevent hanging
+          - npm install  # Changed from npm ci to prevent hanging
       build:
         commands:
           - npm run build
