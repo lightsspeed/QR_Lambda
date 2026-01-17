@@ -38,7 +38,7 @@ functions/**/*.zip
 
 # Node modules (if using Node.js for Lambda)
 **/node_modules/
-**/package-lock.json
+
 
 # Python virtual environments (if using Python for Lambda)
 **/.venv/
