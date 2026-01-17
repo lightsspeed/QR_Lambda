@@ -1,0 +1,42 @@
+# envs/dev/variables.tf
+
+variable "aws_region" {
+  description = "AWS region"
+  type        = string
+  default     = "us-east-1"
+}
+
+variable "project_name" {
+  description = "Project name"
+  type        = string
+}
+
+variable "environment" {
+  description = "Environment name"
+  type        = string
+  default     = "dev"
+}
+
+variable "lambda_zip_path" {
+  description = "Path to Lambda deployment package"
+  type        = string
+}
+
+variable "github_repository_url" {
+  description = "GitHub repository URL for Amplify"
+  type        = string
+}
+
+variable "github_access_token" {
+  description = "GitHub personal access token"
+  type        = string
+  sensitive   = true
+}
+
+variable "custom_domain" {
+  description = "Custom domain for Amplify app"
+  type        = string
+  default     = ""
+}
+
+
