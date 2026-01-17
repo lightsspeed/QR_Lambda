@@ -84,22 +84,23 @@ module "amplify" {
   # Build spec pointing to apps/src (your frontend)
   build_spec = <<-EOT
     version: 1
-    frontend:
-      phases:
-        preBuild:
-          commands:
-            - cd apps/src
-            - npm ci
-        build:
-          commands:
-            - npm run build
-      artifacts:
-        baseDirectory: apps/src/build
-        files:
-          - '**/*'
-      cache:
-        paths:
-          - apps/src/node_modules/**/*
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - cd apps/src
+        - npm install  # Changed from npm ci to prevent hanging
+    build:
+      commands:
+        - npm run build
+  artifacts:
+    baseDirectory: apps/src/dist # Verify this matches your build output
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - apps/src/node_modules/**/*
+
   EOT
 
   environment_variables = {
