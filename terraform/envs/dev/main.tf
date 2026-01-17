@@ -95,7 +95,7 @@ module "amplify" {
           - npm run build
     artifacts:
       baseDirectory: apps/src/dist # Verify this matches your build output
-     files:
+      files:
         - '**/*'
     cache:
       paths:
