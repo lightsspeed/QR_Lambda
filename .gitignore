@@ -72,4 +72,6 @@ functions/**/*.zip
 plan.out
 tfplan.out
 
-apps/backend/package/
+backend/package/
+
+deploy.sh
