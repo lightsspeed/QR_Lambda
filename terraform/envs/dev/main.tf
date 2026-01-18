@@ -85,21 +85,23 @@ module "amplify" {
   build_spec = <<-EOT
     version: 1
     frontend:
-    phases:
-      preBuild:
-        commands:
-          - cd apps/src
-          - npm install  # Changed from npm ci to prevent hanging
-      build:
-        commands:
-          - npm run build
-    artifacts:
-      baseDirectory: apps/src/dist # Verify this matches your build output
-      files:
-        - '**/*'
-    cache:
-      paths:
-        - apps/src/node_modules/**/*
+      phases:
+        preBuild:
+          commands:
+            - cd apps/src
+            - npm install
+        build:
+          commands:
+            - npm run build
+      artifacts:
+        baseDirectory: apps/src/dist
+        files:
+          - '**/*'
+      cache:
+        paths:
+          - apps/src/node_modules/**/*
+  EOT
+
 
   EOT
 
